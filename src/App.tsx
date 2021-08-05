@@ -1,12 +1,14 @@
 import React,{useState} from 'react';
-import { TodoListItem } from './TodoListItem';
+import TodoList from './TodoList';
+
 
 
 
 
 const initialTodo:Array<Todo> = [
-  {text:"walk the dog",complete: true},
-  {text: "Write app",complete: false}
+  {text:"Walk the dog",complete: true},
+  {text: "Write app",complete: false},
+  {text: "Watching movie",complete: false},
 ]
 
 const App:React.FC = () => {
@@ -26,8 +28,7 @@ const toggleTodo:ToggleTodo = selectedTodo => {
 }
   return (
     <>
-      <TodoListItem todo={todos[0]} toggleTodo={toggleTodo} />
-      <TodoListItem todo={todos[1]} toggleTodo={toggleTodo} />
+      <TodoList todos={todos} toggleTodo={toggleTodo} />
     </>
   );
 }
